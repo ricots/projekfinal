@@ -3,6 +3,9 @@ package com.projectzero.renatto.aplikasifinalfix;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -49,5 +52,36 @@ public class MenuUtama extends AppCompatActivity {
                  }
         }
         );
+    }
+
+    @Override // without super
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.kritik:
+                Intent cari = new Intent(MenuUtama.this, kritik_saran.class);
+                startActivity(cari);
+                return false;
+            default:
+                break;
+        }
+
+        if (item.getItemId() == android.R.id.home){
+            onBackPressed();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

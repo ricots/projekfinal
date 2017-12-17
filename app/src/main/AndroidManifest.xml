@@ -29,7 +29,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDneFUwZK88yNbWivb1A024qxZTiPznAi4" />
+            android:value="AIzaSyD3Z9HSojIM2qZ15U5BHgJJJKmSUYstzEY" />
 
         <activity android:name=".MainActivity" />
         <activity android:name=".Splashscreen">
@@ -49,7 +49,10 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".peta" />
         <activity android:name=".jalur" />
-        <activity android:name=".detail_maps"></activity>
+        <activity android:name=".detail_maps" />
+        <activity android:name=".kritik_saran"
+            android:label="kritik saran"
+            android:parentActivityName=".MenuUtama"></activity>
     </application>
 
 </manifest>
